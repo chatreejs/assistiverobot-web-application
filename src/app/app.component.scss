@@ -1,0 +1,54 @@
+:host {
+  display: flex;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.layout {
+  height: 100vh;
+}
+
+.logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 24px 16px 0;
+  float: left;
+}
+
+nz-header {
+  position: fixed;
+  width: 100%;
+  background: #495E6B !important;
+}
+
+[nz-menu] {
+  line-height: 64px;
+  background-color: #495E6B;
+}
+
+nz-content {
+  //padding: 0 50px;
+  margin-top: 64px;
+}
+nz-select{
+  width: 100%;
+}
+
+nz-breadcrumb {
+  padding: 16px 0;
+  text-align: center;
+  background-color: #3C4F5A;
+}
+
+.inner-content {
+  padding: 24px;
+  background: #fff;
+  height: 100%;
+  margin: 0 50px;
+}
+
+nz-footer {
+  text-align: center;
+}
