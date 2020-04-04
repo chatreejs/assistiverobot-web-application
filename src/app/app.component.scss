@@ -20,12 +20,12 @@
 nz-header {
   position: fixed;
   width: 100%;
-  background: #495E6B !important;
+  //background: #495E6B !important;
 }
 
 [nz-menu] {
   line-height: 64px;
-  background-color: #495E6B;
+  //background-color: #495E6B;
 }
 
 nz-content {
@@ -39,16 +39,31 @@ nz-select{
 nz-breadcrumb {
   padding: 16px 0;
   text-align: center;
-  background-color: #3C4F5A;
+  //background-color: #3C4F5A;
 }
 
 .inner-content {
   padding: 24px;
   background: #fff;
   height: 100%;
-  margin: 0 50px;
+  margin: 0 3%;
 }
 
 nz-footer {
+  text-align: center;
+}
+
+.ant-layout-header{
+  padding: 0px;
+  width: 100%;
+  z-index: 9;
+}
+.column{
+  margin: 10px 0;
+}
+
+.card-confirm{
+  width: 100%;
+  height: 100%;
   text-align: center;
 }

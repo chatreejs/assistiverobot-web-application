@@ -12,6 +12,7 @@ import th from '@angular/common/locales/th';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 registerLocaleData(th);
 
@@ -29,6 +30,7 @@ registerLocaleData(th);
     NzGridModule,
     NzSelectModule,
     NzButtonModule,
+    NzIconModule
   ],
   providers: [{ provide: NZ_I18N, useValue: th_TH }],
   bootstrap: [AppComponent]
