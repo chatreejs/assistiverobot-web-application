@@ -13,12 +13,20 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { ConfirmComponent } from './Component/confirm/confirm.component';
+import { CompleteComponent } from './Component/complete/complete.component';
+import { MapFormComponent } from './Component/map-form/map-form.component';
+import {PageNotFoundComponent} from './Component/pagenotfound/pagenotfound.component';
 
 registerLocaleData(th);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ConfirmComponent,
+    CompleteComponent,
+    MapFormComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
