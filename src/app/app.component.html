@@ -1,28 +1,43 @@
 <nz-layout>
   <nz-header>
     <div nz-row nzType="flex" nzJustify="end">
-      <div nz-col nzSpan="1" nzOffset="16" style="background: red">
+      <div nz-col
+           [nzXs]="{ span: 4, offset: 8 }"
+           [nzMd]="{ span: 2, offset: 16 }"
+           [nzLg]="{ span: 1, offset: 20 }"
+           [nzXl]="{ span: 1, offset: 20 }"
+           [nzXXl]="{ span: 1, offset: 20 }"
+           style="background: red">
         icon
       </div>
-      <div nz-col nzSpan="1" style="background: red">
+      <div nz-col [nzXs]="{span:4}"
+           [nzMd]="{ span: 2}"
+           [nzLg]="{ span: 1}"
+           [nzXl]="{ span: 1}"
+           [nzXXl]="{ span: 1}"
+           style="background: red">
         icon
       </div>
-      <div nz-col nzSpan="1" style="background: red">
+      <div nz-col [nzXs]="{span:4}"
+           [nzMd]="{ span: 2}"
+           [nzLg]="{ span: 1}"
+           [nzXl]="{ span: 1}"
+           [nzXXl]="{ span: 1}"
+           style="background: red">
         icon
       </div>
-      <div nz-col nzSpan="1" style="background: red">
+      <div nz-col [nzXs]="{span:4}"
+           [nzMd]="{ span: 2}"
+           [nzLg]="{ span: 1}"
+           [nzXl]="{ span: 1}"
+           [nzXXl]="{ span: 1}"
+           style="background: red">
         icon
       </div>
     </div>
   </nz-header>
   <nz-content>
-    <nz-breadcrumb>
-      <nz-breadcrumb-item>Map</nz-breadcrumb-item>
-    </nz-breadcrumb>
-    <div class="inner-content">
       <router-outlet></router-outlet>
-    </div>
-
   </nz-content>
   <nz-footer>Kobuki App ©2019 Implement By Jirawat and Chanon</nz-footer>
 </nz-layout>
