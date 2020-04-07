@@ -1,33 +1,39 @@
-
 <nz-breadcrumb nzSeparator=">">
   <nz-breadcrumb-item>Map</nz-breadcrumb-item>
   <nz-breadcrumb-item>Confirm</nz-breadcrumb-item>
 </nz-breadcrumb>
 <div class="inner-content">
   <div nz-row nzType="flex" nzJustify="center">
-  <div nz-col nzSpan="16" class="tx-center">
-    <h2>Are you sure ?</h2>
+    <div nz-col nzSpan="16" class="tx-center">
+      <h2>Are you sure ?</h2>
+    </div>
   </div>
-</div>
-<div nz-row nzType="flex" nzJustify="center">
-  <div nz-col nzSpan="14" >
-    <nz-timeline>
-      <nz-timeline-item>1801</nz-timeline-item>
-      <nz-timeline-item>1815</nz-timeline-item>
-    </nz-timeline>
-    <nz-input-group nzAddOnBefore="From" >
-      <input type="text" nz-input />
-    </nz-input-group>
-    <nz-input-group nzAddOnBefore="To" >
-      <input type="text" nz-input />
-    </nz-input-group>
+  <div nz-row nzType="flex" nzJustify="center">
+    <div nz-col nzSpan="14">
+      <nz-timeline>
+        <nz-timeline-item>1801</nz-timeline-item>
+        <nz-timeline-item>1815</nz-timeline-item>
+      </nz-timeline>
+    </div>
   </div>
-</div>
-<div nz-row nzType="flex" nzJustify="center" nzGutter="48">
-  <div nz-col nzSpan="8" class="tx-center">
-    <button nz-button nzType="primary" class="bn-margin" [routerLink]="'/complete'">Confirm</button>
-    <button nz-button nzType="danger" class="bn-margin">Cancel</button>
+  <div nz-row nzType="flex" nzJustify="center" [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32, xl: 32, xxl: 32 }">
+    <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="8" nzXl="8">
+      <nz-input-group nzAddOnBefore="From">
+        <input type="text" nz-input/>
+      </nz-input-group>
+    </div>
+    <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="8" nzXl="8">
+      <nz-input-group nzAddOnBefore="To">
+        <input type="text" nz-input/>
+      </nz-input-group>
+    </div>
   </div>
+  <div nz-row nzType="flex" nzJustify="center" [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32, xl: 32, xxl: 32 }">
+    <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="8" nzXl="8" class="tx-center">
+      <button nz-button nzType="primary" class="bn-margin" [routerLink]="'/complete'">Confirm</button>
+    </div>
+    <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="8" nzXl="8" class="tx-center">
+      <button nz-button nzType="danger" class="bn-margin">Cancel</button>
+    </div>
   </div>
-
 </div>
