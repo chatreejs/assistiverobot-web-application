@@ -3,7 +3,45 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  job: 'http://localhost:5000/api/v1/jobs',
+  mock_data: [{
+    point: '1801',
+    position: {
+      x: 0,
+      y: 0,
+      z: 0
+    }, orientation: {
+      x: 0,
+      y: 0,
+      z: 0,
+      w: 1
+    }
+  }, {
+    point: '1802',
+    position: {
+      x: 0,
+      y: 2,
+      z: 0
+    }, orientation: {
+      x: 0,
+      y: 0,
+      z: 0,
+      w: 1
+    }
+  }, {
+    point: '1815',
+    position: {
+      x: 0,
+      y: -2,
+      z: 0
+    }, orientation: {
+      x: 0,
+      y: 0,
+      z: 0,
+      w: 1
+    }
+  }]
 };
 
 /*
