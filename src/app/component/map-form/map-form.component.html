@@ -1,0 +1,61 @@
+<nz-breadcrumb>
+  <nz-breadcrumb-item>
+    <nz-tag [nzColor]="'#66B9BF'">Map</nz-tag>
+  </nz-breadcrumb-item>
+</nz-breadcrumb>
+<div class="inner-content">
+  <div nz-row nzType="flex" nzJustify="start" [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32, xl: 32, xxl: 32 }">
+    <div nz-col class="column" nzXs="24" nzSm="24" nzMd="24" nzLg="16" nzXl="16">
+      <img src="https://miro.medium.com/max/1400/1*P4Z6NIm0dHypW2NnXqinqg.jpeg" style="width:100%">
+    </div>
+    <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="8" nzXl="8" class="column">
+      <div nz-row nzType="flex" nzJustify="start" class="column">
+        <div nz-col nzSpan="24">
+          <nz-card class="card-confirm">
+            <form (ngSubmit)="onSubmit()">
+            <div nz-row nzType="flex" nzJustify="start" class="column">
+              <div nz-col nzSpan="24">
+                <nz-timeline>
+                  <nz-timeline-item>
+                    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select Start"
+                               [(ngModel)]="selectedStart" name="selectedStart">
+                      <nz-option nzLabel="1801" nzValue="1801"></nz-option>
+                      <nz-option nzLabel="1802" nzValue="1802"></nz-option>
+                      <nz-option nzLabel="1815" nzValue="1815"></nz-option>
+                    </nz-select>
+                  </nz-timeline-item>
+                  <nz-timeline-item>
+                    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Select Destination"
+                    [(ngModel)]="selectedDest" name="selectedDest">
+                      <nz-option nzLabel="1801" nzValue="1801"></nz-option>
+                      <nz-option nzLabel="1802" nzValue="1802"></nz-option>
+                      <nz-option nzLabel="1815" nzValue="1815"></nz-option>
+                    </nz-select>
+                  </nz-timeline-item>
+                </nz-timeline>
+              </div>
+            </div>
+<!--            <div nz-row nzType="flex" nzJustify="start" class="column btn-plus">-->
+<!--              <div nz-col nzSpan="24">-->
+<!--                <button nz-button nzType="primary" [nzSize]="'default'" nzShape="circle"><i nz-icon nzType="plus"-->
+<!--                                                                                            nzTheme="outline"></i>-->
+<!--                </button>-->
+<!--                <label>Add Destination</label>-->
+<!--              </div>-->
+<!--            </div>-->
+            <div nz-row nzType="flex" nzJustify="start" class="column">
+              <div nz-col nzSpan="24">
+                <button nz-button nzType="primary" [nzSize]="'large'" nzShape="round" type="submit">
+                  Confirm
+                </button>
+              </div>
+            </div>
+            </form>
+          </nz-card>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
