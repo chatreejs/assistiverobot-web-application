@@ -154,10 +154,16 @@
             "aot": false,
             "assets": [
               "projects/kobuki/src/favicon.ico",
-              "projects/kobuki/src/assets"
+              "projects/kobuki/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
-              "projects/kobuki/src/styles.scss"
+              "projects/kobuki/src/styles.scss",
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css"
             ],
             "scripts": []
           },
