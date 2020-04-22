@@ -8,6 +8,8 @@ import {NzGridModule} from 'ng-zorro-antd/grid';
 import {NzLayoutModule} from 'ng-zorro-antd/layout';
 import {SelectionComponent} from './component/selection/selection.component';
 import {DisplayEyeComponent} from './component/display-eye/display-eye.component';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import {DisplayEyeComponent} from './component/display-eye/display-eye.component
     AppRoutingModule,
     NgZorroAntdModule,
     NzGridModule,
-    NzLayoutModule
+    NzLayoutModule,
+    NzModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

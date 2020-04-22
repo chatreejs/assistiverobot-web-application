@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {NzModalService} from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-selection',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService: NzModalService) {
+  }
 
   ngOnInit() {
   }
 
+  success(): void {
+    const modal = this.modalService.success({
+      nzTitle: 'Order to Destination',
+      nzContent: 'This modal will be destroyed after 5 second'
+    });
+    // Add API service
+    setTimeout(() => modal.destroy(), 5000);
+  }
 }
