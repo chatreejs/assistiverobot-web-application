@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {interval} from 'rxjs';
+import {interval, Observable} from 'rxjs';
+import {KobukiService} from '../services/kobuki.services';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-display-eye',
@@ -9,13 +11,22 @@ import {interval} from 'rxjs';
 export class DisplayEyeComponent implements OnInit {
   sub = null;
 
-  constructor() {
+  constructor(private kobukiService: KobukiService,
+              private router: Router) {
   }
 
   ngOnInit() {
     this.sub = interval(1000).subscribe(x => {
-      console.log('tar');
+      this.kobukiService.getJob().subscribe(data => {
+        console.log(data[0]['status']);
+        if (data[0]['status'] === 'running') {
+          this.router.navigateByUrl('select');
+          this.sub.unsubscribe();
+        }
+      });
     });
+
+
     // this.sub.unsubscribe(); // not work
   }
 

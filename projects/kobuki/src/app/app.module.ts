@@ -9,6 +9,7 @@ import {NzLayoutModule} from 'ng-zorro-antd/layout';
 import {SelectionComponent} from './component/selection/selection.component';
 import {DisplayEyeComponent} from './component/display-eye/display-eye.component';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -24,7 +25,8 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
     NgZorroAntdModule,
     NzGridModule,
     NzLayoutModule,
-    NzModalModule
+    NzModalModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
