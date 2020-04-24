@@ -10,6 +10,7 @@ import { SelectionComponent } from './component/selection/selection.component';
 import { DisplayEyeComponent } from './component/display-eye/display-eye.component';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { HttpClientModule } from '@angular/common/http';
+import { CarryItemComponent } from './component/carry-item/carry-item.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     SelectionComponent,
     DisplayEyeComponent,
+    CarryItemComponent,
 
   ],
   imports: [
