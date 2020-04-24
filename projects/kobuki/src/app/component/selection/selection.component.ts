@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {NzModalService} from 'ng-zorro-antd';
+import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-selection',
@@ -7,19 +7,20 @@ import {NzModalService} from 'ng-zorro-antd';
   styleUrls: ['./selection.component.scss']
 })
 export class SelectionComponent implements OnInit {
+  showThankyou = false;
 
-  constructor(private modalService: NzModalService) {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
   }
 
-  success(): void {
-    const modal = this.modalService.success({
-      nzTitle: 'Order to Destination',
-      nzContent: 'This modal will be destroyed after 5 second'
-    });
-    // Add API service
-    setTimeout(() => modal.destroy(), 5000);
+  click(): void {
+    this.showThankyou = true;
+    // Add API
+
+    setTimeout(() => {    //<<<---    using ()=> syntax
+      this.router.navigateByUrl('')
+    }, 5000);
   }
 }

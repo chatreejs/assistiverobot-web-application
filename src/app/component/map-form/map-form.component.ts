@@ -26,9 +26,9 @@ export class MapFormComponent implements OnInit {
         }});
     } else {
       if (this.selectedStart === this.selectedDest) {
-        this.message.create('error', 'Please select differect start and destination');
+        this.message.create('error', 'สถานที่รับและสถานที่ส่งไม่สามารถเป็นที่เดียวกันได้');
       } else {
-        this.message.create('error', 'Please select start and destination');
+        this.message.create('error', 'กรุณาเลือกสถานที่รับและสถานที่ส่ง');
       }
     }
   }

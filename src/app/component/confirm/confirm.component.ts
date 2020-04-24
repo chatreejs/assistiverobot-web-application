@@ -1,10 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {filter, map} from 'rxjs/operators';
-import {Observable} from 'rxjs';
-import {environment} from '../../../environments/environment';
-import {RobotService} from '../services/robot.service';
-import {NzMessageService} from 'ng-zorro-antd';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
+import { RobotService } from '../services/robot.service';
+import { NzMessageService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-confirm',
@@ -53,7 +51,7 @@ export class ConfirmComponent implements OnInit {
       () => {
         this.router.navigateByUrl('/complete', {state: {confirm: true}});
       }, () => {
-        this.message.create('error', 'Server has problem');
+        this.message.create('error', 'เกิดข้อผิดพลาดกับเซิฟเวอร์ ไม่สามารถดำเนินการได้');
       });
 
 

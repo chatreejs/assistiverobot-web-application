@@ -1,6 +1,5 @@
 [nz-col]{
   text-align: center;
-  height: 100%;
 }
 nz-layout{
   height: 100%;
@@ -9,12 +8,22 @@ nz-layout{
   height: 100%;
 }
 button{
-  top: 30%;
+  top: 20%;
   margin: auto;
 }
 .ant-btn-round.ant-btn-lg{
-  font-size: 40px;
-  padding: 20% 30% 30% 30%;
-  width: 432px;
+  font-size: 60px;
+  padding: 12% 33% 21% 18%;
+  width: 240px;
   height:260px;
+}
+.header-tx{
+  margin: 50px 0px 50px 0px
+}
+.col-thank{
+  top: 30%;
+}
+h1 {
+  font-size: 150px;
+  font-weight: 900;
 }
