@@ -20,15 +20,13 @@ export class DisplayEyeComponent implements OnInit {
       this.kobukiService.getJob().subscribe(data => {
         this.kobukiService.goal_sender = data[0]['goal'][0]['goal_id']
         this.kobukiService.goal_recipent = data[0]['goal'][1]['goal_id']
-        if (data[0]['goal'][0]['status'] === 'arrived') {
-          this.router.navigateByUrl('select');
+        if (data[0]['goal'][0]['status'] === 'arrived' || data[0]['goal'][0]['status'] === 'success') {
+          this.router.navigateByUrl('sender',{state: {confirm: true}});
           this.sub.unsubscribe();
         }
       });
     });
 
-
-    // this.sub.unsubscribe(); // not work
   }
 
 

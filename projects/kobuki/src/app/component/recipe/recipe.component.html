@@ -2,12 +2,9 @@
   <nz-content>
     <div nz-row nzAlign="middle" nzJustify="center">
       <div nz-col nzSpan="24" class="header-tx">
-        <h2>กรุณากดยืนยันการรับส่งของด้วยครับ</h2>
+        <h2>กรุณากดยืนยันการส่งของด้วยครับ</h2>
       </div>
-      <div nz-col nzSpan="24" *ngIf="sender">
-        <button nz-button nzType="primary" [nzSize]="'large'" nzShape="round" (click)="clickSender()">ยืนยัน</button>
-      </div>
-      <div nz-col nzSpan="24" *ngIf="!sender">
+      <div nz-col nzSpan="24" >
         <button nz-button nzType="primary" [nzSize]="'large'" nzShape="round" (click)="clickRecipe()">ยืนยัน</button>
       </div>
     </div>
@@ -19,7 +16,7 @@
 
     <div nz-row nzAlign="middle" nzJustify="center">
       <div nz-col nzSpan="24" class="header-tx" class="col-thank">
-        <h1>ขอบคุณครับ</h1>
+        <h1>ส่งสิ่งของแล้วนะครับ</h1>
       </div>
     </div>
   </nz-content>

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { KobukiService } from "../services/kobuki.services";
-import { Router } from "@angular/router";
-import { interval } from "rxjs";
+import {Component, OnInit} from '@angular/core';
+import {KobukiService} from '../services/kobuki.services';
+import {Router} from '@angular/router';
+import {interval} from 'rxjs';
 
 @Component({
   selector: 'app-carry-item',
@@ -9,19 +9,31 @@ import { interval } from "rxjs";
   styleUrls: ['./carry-item.component.scss']
 })
 export class CarryItemComponent implements OnInit {
-sub = null
+  sub = null;
+  order = null;
+
   constructor(private kobukiService: KobukiService,
-              private router: Router) { }
+              private router: Router) {
+    const navigation = this.router.getCurrentNavigation();
+    const state = navigation.extras.state as {
+      confirm: boolean;
+    };
+    try {
+      this.order = state.confirm;
+    } catch (e) {
+      this.router.navigate(['/']);
+    }
+  }
 
   ngOnInit() {
     this.sub = interval(5000).subscribe(x => {
       this.kobukiService.getJob().subscribe(data => {
-        this.kobukiService.goal_sender = data[0]['goal'][0]['goal_id']
-        this.kobukiService.goal_recipent = data[0]['goal'][1]['goal_id']
-        if (data[0]['goal'][1]['status'] === 'arrived') {
-          this.router.navigateByUrl('select');
+        if (data[0]['goal'][1]['status'] === 'arrived' || data[0]['goal'][1]['status'] === 'success') {
+          this.router.navigateByUrl('recipe', {state: {confirm: true}});
           this.sub.unsubscribe();
         }
+      }, error => {
+        this.router.navigateByUrl('');
       });
     });
   }
