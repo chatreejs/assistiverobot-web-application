@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { KobukiService } from "../services/kobuki.services";
+import { Router } from "@angular/router";
+import { interval } from "rxjs";
 
 @Component({
   selector: 'app-carry-item',
@@ -6,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carry-item.component.scss']
 })
 export class CarryItemComponent implements OnInit {
-
-  constructor() { }
+sub = null
+  constructor(private kobukiService: KobukiService,
+              private router: Router) { }
 
   ngOnInit() {
+    this.sub = interval(5000).subscribe(x => {
+      this.kobukiService.getJob().subscribe(data => {
+        this.kobukiService.goal_sender = data[0]['goal'][0]['goal_id']
+        this.kobukiService.goal_recipent = data[0]['goal'][1]['goal_id']
+        if (data[0]['goal'][1]['status'] === 'arrived') {
+          this.router.navigateByUrl('select');
+          this.sub.unsubscribe();
+        }
+      });
+    });
   }
 
 }

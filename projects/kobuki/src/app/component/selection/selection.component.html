@@ -4,8 +4,11 @@
       <div nz-col nzSpan="24" class="header-tx">
         <h2>กรุณากดยืนยันการรับส่งของด้วยครับ</h2>
       </div>
-      <div nz-col nzSpan="24">
-        <button nz-button nzType="primary" [nzSize]="'large'" nzShape="round" (click)="click()">ยืนยัน</button>
+      <div nz-col nzSpan="24" *ngIf="sender">
+        <button nz-button nzType="primary" [nzSize]="'large'" nzShape="round" (click)="clickSender()">ยืนยัน</button>
+      </div>
+      <div nz-col nzSpan="24" *ngIf="!sender">
+        <button nz-button nzType="primary" [nzSize]="'large'" nzShape="round" (click)="clickRecipe()">ยืนยัน</button>
       </div>
     </div>
   </nz-content>

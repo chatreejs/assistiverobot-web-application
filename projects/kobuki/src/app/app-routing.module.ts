@@ -10,8 +10,7 @@ const routes: Routes = [
     { path: 'select', component: SelectionComponent },
     { path: 'carry', component: CarryItemComponent },
     { path: '**', component: DisplayEyeComponent }
-  ]
-;
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

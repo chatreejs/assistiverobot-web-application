@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  job: 'http://localhost:5000/api/v1/jobs'
+  baseUrl: 'http://192.168.31.197:5000',
 };
 
 /*
