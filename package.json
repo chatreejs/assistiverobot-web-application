@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --host 0.0.0.0",
+    "start-kobuki": "ng serve --host 0.0.0.0 --project kobuki",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "kobuki": "ng serve --project kobuki"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {

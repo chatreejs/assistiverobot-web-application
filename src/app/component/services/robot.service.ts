@@ -1,8 +1,7 @@
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {Injectable} from '@angular/core';
-import {throwError as observableThrowError} from 'rxjs';
-import {environment} from '../../../environments/environment';
-import {catchError, map} from 'rxjs/operators';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { throwError as observableThrowError } from 'rxjs';
+import { config } from "../../../environments/config";
 
 
 @Injectable({
@@ -20,7 +19,7 @@ export class RobotService {
 
   postJob(form: any, onSuccess, onError) {
     console.log(form);
-    this.http.post<any>(environment.job, form).subscribe((res) => {
+    this.http.post<any>(config.job, form).subscribe((res) => {
       onSuccess();
     }, (err) => {
       onError();
