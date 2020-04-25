@@ -41,7 +41,5 @@ export class KobukiService {
         console.error('There was an error during the request');
         console.log(error);
       });
-    console.log("Test");
-
   }
 }

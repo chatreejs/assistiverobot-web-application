@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {KobukiService} from '../services/kobuki.services';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { KobukiService } from '../services/kobuki.services';
 
 @Component({
   selector: 'app-sender',
@@ -28,7 +28,9 @@ export class SenderComponent implements OnInit {
   ngOnInit() {
     this.kobukiService.getJob().subscribe(data => {
       if (data[0]['goal'][0]['status'] === 'success') {
-        this.router.navigateByUrl('carry',{state: {confirm: true}});
+        this.router.navigateByUrl('carry', { state: { confirm: true } });
+      } else if (data === null) {
+        this.router.navigateByUrl('')
       }
     });
   }
@@ -38,7 +40,7 @@ export class SenderComponent implements OnInit {
     this.kobukiService.updateGoalStatus(true);
     setTimeout(() => {    //<<<---    using ()=> syntax
       this.showThankyou = false;
-      this.router.navigateByUrl('carry', {state: {confirm: true}});
+      this.router.navigateByUrl('carry', { state: { confirm: true } });
     }, 10000);
   }
 }

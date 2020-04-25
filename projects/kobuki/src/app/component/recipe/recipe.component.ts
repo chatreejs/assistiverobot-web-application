@@ -28,6 +28,8 @@ export class RecipeComponent implements OnInit {
     this.kobukiService.getJob().subscribe(data => {
       if (data[0]['goal'][1]['status'] === 'success') {
         this.router.navigateByUrl('');
+      } else if(data === null){
+        this.router.navigateByUrl('')
       }
     });
   }
