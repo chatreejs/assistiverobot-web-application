@@ -1,0 +1,22 @@
+pipeline {
+      agent any
+      stages {
+          stage('Checkout') {
+              steps {
+                  git branch: 'master',
+                      url: 'https://gitlab.com/assistiverobot/assistiverobot.web.application.git'
+                  echo 'Checkout complete'
+              }
+          }
+          stage('Deploy') {
+              steps {
+                  bat 'appcmd stop apppool /apppool.name:\"Toktak Web App\"'
+                  bat label: '', script: '''
+                                          npm install
+                                          ng build --prod --output-path=D:\\Toktak-Web-App\\dist\\website --base-href /app/
+                                          '''
+                  bat 'appcmd start apppool /apppool.name:\"Toktak Web App\"'
+              }
+          }
+      }
+}
