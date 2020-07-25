@@ -1,6 +1,8 @@
 pipeline {
       agent any
-      tools {nodejs "NodeJS 12"}
+      tools {
+          nodejs "NodeJS 12"
+      }
       stages {
           stage('Checkout') {
               steps {
@@ -12,10 +14,8 @@ pipeline {
           stage('Deploy') {
               steps {
                   bat 'appcmd stop apppool /apppool.name:\"Toktak Web App\"'
-                  bat label: '', script: '''
-                                          npm install
-                                          ng build --prod --output-path=D:\\Toktak-Web-App\\dist\\website --base-href /app/
-                                          '''
+                  bat 'npm install'
+                  bat 'ng build --prod --output-path=D:\\Toktak-Web-App\\dist\\website --base-href /app/'
                   bat 'appcmd start apppool /apppool.name:\"Toktak Web App\"'
               }
           }
