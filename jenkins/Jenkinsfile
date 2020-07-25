@@ -15,7 +15,7 @@ pipeline {
               steps {
                   bat 'appcmd stop apppool /apppool.name:\"Toktak Web App\"'
                   bat 'npm install'
-                  bat 'ng build --prod --output-path=D:\\Toktak-Web-App\\dist\\website --base-href /app/'
+                  bat 'npm run ng -- build --prod --output-path=D:\\Toktak-Web-App\\dist\\website --base-href /app/'
                   bat 'appcmd start apppool /apppool.name:\"Toktak Web App\"'
               }
           }
