@@ -1,8 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { throwError as observableThrowError } from 'rxjs';
-import { config } from "../../../environments/config";
-
+import { Observable, throwError as observableThrowError } from 'rxjs';
+import { config } from '../../../environments/config';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +9,6 @@ import { config } from "../../../environments/config";
 
 export class RobotService {
   constructor(private http: HttpClient) {
-
   }
 
   static errorHandler(error: HttpErrorResponse) {
@@ -24,5 +22,9 @@ export class RobotService {
     }, (err) => {
       onError();
     });
+  }
+
+  createJob(jobRequest: any): Observable<any> {
+    return this.http.post(config.job, jobRequest);
   }
 }

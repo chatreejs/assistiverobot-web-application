@@ -19,7 +19,7 @@ export class MapFormComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.selectedDest !== null && this.selectedDest !== null && this.selectedStart !== this.selectedDest) {
+    if (this.selectedStart !== null && this.selectedDest !== null && this.selectedStart !== this.selectedDest) {
       this.router.navigateByUrl('/confirm', {state: {
           start: this.selectedStart,
           dest: this.selectedDest,

@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://192.168.1.106/service',
+  baseUrl: 'http://localhost:5000',
   mock_data: [{
     point: '1801',
     position: {
