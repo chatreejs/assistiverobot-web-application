@@ -1,0 +1,23 @@
+<nz-layout>
+  <nz-header>
+    <div nz-row nzType="flex" nzJustify="end">
+      <div
+        nz-col
+        [nzXs]="{ span: 4, offset: 8 }"
+        [nzMd]="{ span: 2, offset: 16 }"
+        [nzLg]="{ span: 1, offset: 20 }"
+        [nzXl]="{ span: 1, offset: 20 }"
+        [nzXXl]="{ span: 1, offset: 20 }"
+        class="btn-icon"
+      >
+        <a routerLink="/"><i nz-icon nzType="home" nzTheme="outline"></i></a>
+      </div>
+    </div>
+  </nz-header>
+  <nz-content>
+    <router-outlet></router-outlet>
+  </nz-content>
+  <nz-footer>
+    Made with <span style="color: #e25555">&#9829;</span> by Toktak Developer
+  </nz-footer>
+</nz-layout>
