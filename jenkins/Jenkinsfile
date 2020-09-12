@@ -11,20 +11,12 @@ pipeline {
                   echo 'Checkout complete'
               }
           }
-          stage('Deploy Main Web App') {
+          stage('Deploy Web App') {
               steps {
                   bat 'appcmd stop apppool /apppool.name:\"Toktak Web App\"'
                   bat 'npm install'
-                  bat 'npm run ng -- build --prod --outputPath=D:\\Toktak-Web-App\\main\\production --base-href /app/'
+                  bat 'npm run ng -- build --prod --outputPath=D:\\Toktak-Web-App\\website\\production --base-href /app/'
                   bat 'appcmd start apppool /apppool.name:\"Toktak Web App\"'
-              }
-          }
-          stage('Deploy Kobuki Web App') {
-              steps {
-                  bat 'appcmd stop apppool /apppool.name:\"Toktak Kobuki Web App\"'
-                  bat 'npm install'
-                  bat 'npm run ng -- build --prod --project kobuki --outputPath=D:\\Toktak-Web-App\\kobuki\\production --base-href /kobuki-app/'
-                  bat 'appcmd start apppool /apppool.name:\"Toktak Kobuki Web App\"'
               }
           }
       }
