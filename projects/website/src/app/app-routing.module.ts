@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { Result403ForbiddenComponent } from './result403forbidden/result403forbidden.component';
+import { Result404NotfoundComponent } from './result404notfound/result404notfound.component';
 
 
 const routes: Routes = [
@@ -16,8 +18,16 @@ const routes: Routes = [
     loadChildren: () => import('./kobuki/kobuki.module').then(m => m.KobukiModule)
   },
   {
+    path: 'forbidden',
+    component: Result403ForbiddenComponent
+  },
+  {
+    path: 'notfound',
+    component: Result404NotfoundComponent
+  },
+  {
     path: '**',
-    redirectTo: ''
+    redirectTo: 'notfound'
   }
 ]
 
