@@ -12,7 +12,7 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzTimelineModule } from 'ng-zorro-antd/timeline';
 import { NzSelectModule } from 'ng-zorro-antd/select';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzMessageModule } from 'ng-zorro-antd/message';
@@ -30,7 +30,7 @@ import { NzResultModule } from 'ng-zorro-antd/result';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    FormsModule,
+    ReactiveFormsModule,
 
     NzIconModule,
     NzLayoutModule,

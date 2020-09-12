@@ -19,11 +19,20 @@
     >
       <img src="assets/map.jpg" />
     </div>
-    <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="8" nzXl="8" class="column">
+    <div
+      nz-col
+      nzXs="24"
+      nzSm="24"
+      nzMd="24"
+      nzLg="8"
+      nzXl="8"
+      class="column"
+      [formGroup]="locationForm"
+    >
       <div nz-row nzType="flex" nzJustify="start" class="column">
         <div nz-col nzSpan="24">
           <nz-card class="card-confirm">
-            <form (ngSubmit)="submit()">
+            <div>
               <div nz-row nzType="flex" nzJustify="start" class="column">
                 <div nz-col nzSpan="24">
                   <nz-timeline>
@@ -32,12 +41,14 @@
                         nzShowSearch
                         nzAllowClear
                         nzPlaceHolder="กรุณาเลือกสถานที่รับ"
-                        [(ngModel)]="startLocation"
+                        formControlName="startLocation"
                         name="startLocation"
                       >
-                        <nz-option nzLabel="1801" nzValue="1801"></nz-option>
-                        <nz-option nzLabel="1802" nzValue="1802"></nz-option>
-                        <nz-option nzLabel="1815" nzValue="1815"></nz-option>
+                        <nz-option
+                          *ngFor="let location of locationList"
+                          [nzLabel]="location.name"
+                          [nzValue]="location.location_id"
+                        ></nz-option>
                       </nz-select>
                     </nz-timeline-item>
                     <nz-timeline-item>
@@ -45,12 +56,14 @@
                         nzShowSearch
                         nzAllowClear
                         nzPlaceHolder="กรุณาเลือกสถานที่ส่ง"
-                        [(ngModel)]="destLocation"
+                        formControlName="destLocation"
                         name="destLocation"
                       >
-                        <nz-option nzLabel="1801" nzValue="1801"></nz-option>
-                        <nz-option nzLabel="1802" nzValue="1802"></nz-option>
-                        <nz-option nzLabel="1815" nzValue="1815"></nz-option>
+                        <nz-option
+                          *ngFor="let location of locationList"
+                          [nzLabel]="location.name"
+                          [nzValue]="location.location_id"
+                        ></nz-option>
                       </nz-select>
                     </nz-timeline-item>
                   </nz-timeline>
@@ -64,12 +77,13 @@
                     [nzSize]="'large'"
                     nzShape="round"
                     type="submit"
+                    (click)="submit()"
                   >
                     ยืนยัน
                   </button>
                 </div>
               </div>
-            </form>
+            </div>
           </nz-card>
         </div>
       </div>
