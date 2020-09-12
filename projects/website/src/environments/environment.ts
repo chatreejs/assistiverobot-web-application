@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://192.168.1.106/service-dev'
+  baseUrl: 'http://localhost:5000'
 };
 
 /*
