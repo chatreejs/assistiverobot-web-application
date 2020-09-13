@@ -43,7 +43,7 @@ export class ConfirmComponent implements OnInit {
     }
     this.jobService.createJob(jobRequest).subscribe((response) => {
       if (response.message == "success") {
-        this.router.navigate(['complete'], {
+        this.router.navigate(['../complete'], {
           relativeTo: this.route,
           state: {
             confirm: true
