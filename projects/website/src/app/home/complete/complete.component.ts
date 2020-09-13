@@ -22,7 +22,7 @@ export class CompleteComponent implements OnInit {
     try {
       this.formConfirm = state.confirm
     } catch (e) {
-      this.router.navigate([''], {
+      this.router.navigate(['./'], {
         relativeTo: this.route
       })
     }
