@@ -30,11 +30,8 @@ export class GoalsService {
 
   }
 
-  public createGoals(location: Location) {
-
-  }
-
-  public updateGoals(location: Location) {
-
+  public updateGoals(id: number, status: string): Observable<ResultResponse<any>> {
+    return this.http.patch<ResultResponse<any>>(`${this.endPoint}/${id}`, { status: status })
+      .pipe(take(1), catchError(this.handleError))
   }
 }
