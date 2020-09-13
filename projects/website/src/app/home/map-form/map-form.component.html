@@ -1,0 +1,92 @@
+<nz-breadcrumb>
+  <nz-breadcrumb-item> เลือกสถานที่ </nz-breadcrumb-item>
+</nz-breadcrumb>
+<div class="inner-content">
+  <div
+    nz-row
+    nzType="flex"
+    nzJustify="start"
+    [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32, xl: 32, xxl: 32 }"
+  >
+    <div
+      nz-col
+      class="column"
+      nzXs="24"
+      nzSm="24"
+      nzMd="24"
+      nzLg="16"
+      nzXl="16"
+    >
+      <img src="assets/map.jpg" />
+    </div>
+    <div
+      nz-col
+      nzXs="24"
+      nzSm="24"
+      nzMd="24"
+      nzLg="8"
+      nzXl="8"
+      class="column"
+      [formGroup]="locationForm"
+    >
+      <div nz-row nzType="flex" nzJustify="start" class="column">
+        <div nz-col nzSpan="24">
+          <nz-card class="card-confirm">
+            <div>
+              <div nz-row nzType="flex" nzJustify="start" class="column">
+                <div nz-col nzSpan="24">
+                  <nz-timeline>
+                    <nz-timeline-item>
+                      <nz-select
+                        nzShowSearch
+                        nzAllowClear
+                        nzPlaceHolder="กรุณาเลือกสถานที่รับ"
+                        formControlName="startLocation"
+                        name="startLocation"
+                      >
+                        <nz-option
+                          *ngFor="let location of locationList"
+                          [nzLabel]="location.name"
+                          [nzValue]="location.location_id"
+                        ></nz-option>
+                      </nz-select>
+                    </nz-timeline-item>
+                    <nz-timeline-item>
+                      <nz-select
+                        nzShowSearch
+                        nzAllowClear
+                        nzPlaceHolder="กรุณาเลือกสถานที่ส่ง"
+                        formControlName="destLocation"
+                        name="destLocation"
+                      >
+                        <nz-option
+                          *ngFor="let location of locationList"
+                          [nzLabel]="location.name"
+                          [nzValue]="location.location_id"
+                        ></nz-option>
+                      </nz-select>
+                    </nz-timeline-item>
+                  </nz-timeline>
+                </div>
+              </div>
+              <div nz-row nzType="flex" nzJustify="start" class="column">
+                <div nz-col nzSpan="24">
+                  <button
+                    nz-button
+                    nzType="primary"
+                    [nzSize]="'large'"
+                    nzShape="round"
+                    type="submit"
+                    (click)="submit()"
+                  >
+                    ยืนยัน
+                  </button>
+                </div>
+              </div>
+            </div>
+          </nz-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
