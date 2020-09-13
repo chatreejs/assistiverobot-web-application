@@ -16,7 +16,7 @@ pipeline {
           }
           stage('Build for production') {
               when {
-                  branch: 'master'
+                  branch 'master'
               }
               steps {
                   bat 'npm run ng -- build --prod --base-href /app/'
@@ -24,7 +24,7 @@ pipeline {
           }
           stage('Build for development') {
               when {
-                  branch: 'master'
+                  branch 'dev'
               }
               steps {
                   bat 'npm run ng -- build --prod --base-href /app-dev/'
