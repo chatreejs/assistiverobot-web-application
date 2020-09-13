@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd';
 import { JobsService } from '../../core/services/jobs.service';
 import { JobRequest } from '../../core/models/requests/JobRequest';
@@ -16,8 +16,9 @@ export class ConfirmComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private message: NzMessageService,
-    private jobService: JobsService
+    private route: ActivatedRoute,
+    private jobService: JobsService,
+    private message: NzMessageService
   ) {
     const navigation = this.router.getCurrentNavigation()
     const state = navigation.extras.state as {
@@ -42,7 +43,12 @@ export class ConfirmComponent implements OnInit {
     }
     this.jobService.createJob(jobRequest).subscribe((response) => {
       if (response.message == "success") {
-        this.router.navigateByUrl('/complete', { state: { confirm: true } })
+        this.router.navigate(['complete'], {
+          relativeTo: this.route,
+          state: {
+            confirm: true
+          }
+        })
       }
     }, (errror) => {
       console.error(errror)

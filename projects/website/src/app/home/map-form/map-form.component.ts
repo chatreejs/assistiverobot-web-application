@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd';
 import { LocationsService } from '../../core/services/locations.service';
 import { Location } from '../../core/models/Location';
@@ -25,6 +25,7 @@ export class MapFormComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private locationServiee: LocationsService,
     private message: NzMessageService) { }
 
@@ -48,7 +49,8 @@ export class MapFormComponent implements OnInit {
     if (this.startLocation === this.destLocation) {
       this.message.create('error', 'สถานที่รับและสถานที่ส่งไม่สามารถเป็นที่เดียวกันได้')
     } else {
-      this.router.navigateByUrl('confirm', {
+      this.router.navigate(['confirm'], {
+        relativeTo: this.route,
         state: {
           start: this.startLocation,
           dest: this.destLocation
