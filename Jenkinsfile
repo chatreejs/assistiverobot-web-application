@@ -36,7 +36,7 @@ pipeline {
               }
               steps {
                   bat 'appcmd stop apppool /apppool.name:\"Toktak Web App\"'
-                  bat 'copy \\dist\\website D:\\Toktak-Web-App\\production'
+                  bat 'copy .\\dist\\website D:\\Toktak-Web-App\\production'
                   bat 'copy .\\web.config D:\\Toktak-Web-App\\develop\\web.config'
                   bat 'appcmd start apppool /apppool.name:\"Toktak Web App\"'
               }
@@ -47,7 +47,7 @@ pipeline {
               }
               steps {
                   bat 'appcmd stop apppool /apppool.name:\"Toktak Web App Dev\"'
-                  bat 'copy \\dist\\website D:\\Toktak-Web-App\\develop'
+                  bat 'copy .\\dist\\website D:\\Toktak-Web-App\\develop'
                   bat 'copy .\\web.development.config D:\\Toktak-Web-App\\develop\\web.config'
                   bat 'appcmd start apppool /apppool.name:\"Toktak Web App Dev\"'
               }
