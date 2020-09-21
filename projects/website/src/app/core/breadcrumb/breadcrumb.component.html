@@ -1,0 +1,6 @@
+<nz-breadcrumb>
+  <nz-breadcrumb-item *ngFor="let breadcrumb of breadcrumbs; let i = index">
+    <ng-container *ngIf="i === breadcrumbs.length-1; else linkBreadcrumb">{{ breadcrumb.label }}</ng-container>
+    <ng-template #linkBreadcrumb><a [routerLink]="breadcrumb.path">{{ breadcrumb.label }}</a></ng-template>
+  </nz-breadcrumb-item>
+</nz-breadcrumb>
