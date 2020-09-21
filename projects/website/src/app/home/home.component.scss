@@ -5,10 +5,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.layout {
-  height: 100vh;
-}
-
 .logo {
   width: 120px;
   height: 31px;
@@ -17,32 +13,33 @@
   float: left;
 }
 
-nz-header {
-  position: fixed;
-  width: 100%;
-  background: #07889B !important;
-}
-
 [nz-menu] {
   line-height: 64px;
-  //background-color: #495E6B;
 }
 
-[nz-icon]{
-  color:white;
+nz-content {
+  padding: 0 50px;
 }
-
 
 nz-footer {
   text-align: center;
 }
 
-.ant-layout-header{
-  padding: 0px;
-  width: 100%;
-  z-index: 9;
+nz-breadcrumb {
+  margin: 16px 0 !important;
+  text-align: center;
 }
 
-.btn-icon{
-  text-align: center;
+.inner-content {
+  background: #fff;
+  padding: 24px;
+  min-height: 280px;
+}
+
+.inner-layout {
+  padding: 0 24px 24px;
+}
+
+nz-header {
+  background: #07889b !important;
 }
