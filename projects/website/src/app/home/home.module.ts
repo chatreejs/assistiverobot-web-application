@@ -20,6 +20,8 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzResultModule } from 'ng-zorro-antd/result';
 
+import { CoreModule } from '../core/core.module';
+
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { NzResultModule } from 'ng-zorro-antd/result';
     NzMessageModule,
     NzInputModule,
     NzResultModule,
+
+    CoreModule,
   ]
 })
 export class HomeModule { }

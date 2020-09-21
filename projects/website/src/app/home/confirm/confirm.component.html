@@ -1,7 +1,3 @@
-<!-- <nz-breadcrumb nzSeparator=">">
-  <nz-breadcrumb-item> เลือกสถานที่ </nz-breadcrumb-item>
-  <nz-breadcrumb-item> ยืนยันสถานที่ </nz-breadcrumb-item>
-</nz-breadcrumb> -->
 <div nz-row nzType="flex" nzJustify="center">
   <div nz-col nzSpan="16" class="tx-center">
     <h2>กรุณายืนยัน</h2>
@@ -38,12 +34,12 @@
   nzJustify="center"
   [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32, xl: 32, xxl: 32 }"
 >
-  <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="8" nzXl="8" class="tx-center">
+  <div nz-col nzXs="12" nzSm="12" nzMd="12" nzLg="8" nzXl="8" class="tx-center">
     <button nz-button nzType="primary" class="bn-margin" (click)="submit()">
       ยืนยัน
     </button>
   </div>
-  <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="8" nzXl="8" class="tx-center">
+  <div nz-col nzXs="12" nzSm="12" nzMd="12" nzLg="8" nzXl="8" class="tx-center">
     <button nz-button nzType="danger" class="bn-margin" [routerLink]="'/'">
       ยกเลิก
     </button>

@@ -1,4 +1,5 @@
 :host {
+  height: 100vh;
   display: flex;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -17,9 +18,9 @@
   line-height: 64px;
 }
 
-nz-content {
-  padding: 0 50px;
-}
+// nz-content {
+  // padding: 0 50px;
+// }
 
 nz-footer {
   text-align: center;
@@ -30,16 +31,26 @@ nz-breadcrumb {
   text-align: center;
 }
 
+toktak-breadcrumb {
+  margin: 16px 0 !important;
+  text-align: center;
+}
+
 .inner-content {
   background: #fff;
   padding: 24px;
   min-height: 280px;
+  height: 100%;
 }
 
 .inner-layout {
-  padding: 0 24px 24px;
+  padding: 0 1rem
 }
 
 nz-header {
   background: #07889b !important;
+}
+
+[nz-icon] {
+  color: white;
 }

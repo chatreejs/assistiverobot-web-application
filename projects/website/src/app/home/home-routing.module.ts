@@ -14,15 +14,18 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: MapFormComponent
+        component: MapFormComponent,
+        data: { breadcrumb: 'เลือกสถานที่' }
       },
       {
         path: 'confirm',
-        component: ConfirmComponent
+        component: ConfirmComponent,
+        data: { breadcrumb: 'เลือกสถานที่ > ยืนยันสถานที่' }
       },
       {
         path: 'complete',
-        component: CompleteComponent
+        component: CompleteComponent,
+        data: { breadcrumb: 'เลือกสถานที่ > ยืนยันสถานที่ > ผลการดำเนินการ' }
       }
     ]
   }
