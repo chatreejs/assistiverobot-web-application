@@ -1,5 +1,5 @@
-nz-layout {
-  > .full-image {
+:host ::ng-deep {
+  img.full-image {
     width: 100vw;
     height: 100vh;
   }
