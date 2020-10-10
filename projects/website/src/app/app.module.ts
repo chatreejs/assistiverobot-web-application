@@ -12,6 +12,7 @@ import th from '@angular/common/locales/th';
 
 import { Result403ForbiddenComponent } from './result403forbidden/result403forbidden.component';
 import { Result404NotfoundComponent } from './result404notfound/result404notfound.component';
+import { LoginComponent } from './authentication/login/login.component';
 
 registerLocaleData(th);
 
@@ -19,7 +20,8 @@ registerLocaleData(th);
   declarations: [
     AppComponent,
     Result403ForbiddenComponent,
-    Result404NotfoundComponent
+    Result404NotfoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
