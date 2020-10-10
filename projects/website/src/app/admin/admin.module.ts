@@ -10,6 +10,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzIconModule } from 'ng-zorro-antd/icon'
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzFormModule } from 'ng-zorro-antd/form';
 
 
 @NgModule({
@@ -18,7 +27,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
     LocationComponent,
     JobComponent,
     UmComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     CommonModule,
@@ -27,6 +36,15 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
     NzLayoutModule,
     NzMenuModule,
     NzBreadCrumbModule,
+    NzCardModule,
+    NzTableModule,
+    NzIconModule,
+    NzButtonModule,
+    NzInputModule,
+    NzPaginationModule,
+    NzModalModule,
+    NzFormModule,
+
   ]
 })
 export class AdminModule { }

@@ -4,36 +4,12 @@
         <input type="text" nz-input placeholder="Find a person" />
     </nz-input-group>
     <ng-template #suffixIconSearch>
-        <i nz-icon nzType="search">
-
-        </i>
+        <i nz-icon nzType="search"></i>
     </ng-template>
-    <button nz-button nzType="primary" nzDanger style="margin-left:38px;" (click)="showModal()">
+    <button nz-button nzType="primary" nzDanger style="margin-left:38px;">
         <i nz-icon nzType="user-add" nzTheme="outline"></i>
     </button>
-    <nz-modal [(nzVisible)]="isVisible" nzTitle="The first Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
-        <ng-template #modalTitle>
-            Add user
-        </ng-template>
-
-        <ng-template #modalContent>
-            <form nz-form>
-                <nz-form-item>
-                    <nz-form-label [nzSpan]="6" nzFor="email">E-mail</nz-form-label>
-                    <nz-form-control [nzSpan]="14">
-                        <input nz-input name="email" type="email" id="email">
-                    </nz-form-control>
-                </nz-form-item>
-            </form>
-        </ng-template>
-
-        <ng-template #modalFooter>
-            <span>Modal Footer: </span>
-            <button nz-button nzType="default" (click)="handleCancel()">Cancel</button>
-            <button nz-button nzType="primary" (click)="handleOk()">Add</button>
-        </ng-template>
-    </nz-modal>
-    <br><br>
+    <br> <br>
 
     <nz-table #colSpanTable nzBordered>
         <thead>
