@@ -37,7 +37,7 @@ pipeline {
               steps {
                   bat 'appcmd stop apppool /apppool.name:\"Toktak Web App\"'
                   bat 'xcopy .\\dist\\website D:\\Toktak-Web-App\\production /s /y'
-                  bat 'copy .\\web.config D:\\Toktak-Web-App\\develop\\web.config'
+                  bat 'copy .\\web.config D:\\Toktak-Web-App\\production\\web.config'
                   bat 'appcmd start apppool /apppool.name:\"Toktak Web App\"'
               }
           }
