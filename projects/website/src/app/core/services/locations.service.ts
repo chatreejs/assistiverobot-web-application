@@ -26,15 +26,18 @@ export class LocationsService {
       .pipe(take(1), catchError(this.handleError))
   }
 
-  public getLocationById(id: number) {
-
+  public getLocationById(id: number): Observable<ResultResponse<Location>> {
+    return this.http.get<ResultResponse<Location>>(this.endPoint)
+      .pipe(take(1), catchError(this.handleError))
   }
 
-  public createLocations(location: Location) {
-
+  public createLocations(location: Location): Observable<ResultResponse<any>> {
+    return this.http.post<ResultResponse<any>>(this.endPoint, location)
+      .pipe(take(1), catchError(this.handleError))
   }
 
-  public updateLocations(location: Location) {
-
+  public updateLocations(id: number, location: Location): Observable<ResultResponse<any>> {
+    return this.http.patch<ResultResponse<any>>(`${this.endPoint}/${id}`, location)
+      .pipe(take(1), catchError(this.handleError))
   }
 }

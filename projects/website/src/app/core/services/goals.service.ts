@@ -26,9 +26,10 @@ export class GoalsService {
       .pipe(take(1), catchError(this.handleError))
   }
 
-  public getGoalById(id: number) {
+  // TODO: Implement
+  // public getGoalById(id: number) {
 
-  }
+  // }
 
   public updateGoals(id: number, status: string): Observable<ResultResponse<any>> {
     return this.http.patch<ResultResponse<any>>(`${this.endPoint}/${id}`, { status: status })
