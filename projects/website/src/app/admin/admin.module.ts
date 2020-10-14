@@ -20,6 +20,7 @@ import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 
 
 @NgModule({
@@ -46,6 +47,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     NzModalModule,
     NzFormModule,
     DragDropModule,
+    NzInputNumberModule,
+    NzSelectModule,
 
   ]
 })

@@ -17,6 +17,7 @@ interface ItemData {
 export class UmComponent implements OnInit {
 
   isVisible = false;
+  selectedValue = null;
 
 
   constructor() { }

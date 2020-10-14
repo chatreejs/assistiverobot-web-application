@@ -12,27 +12,52 @@
         <i nz-icon nzType="user-add" nzTheme="outline"></i>
     </button>
     
-    <nz-modal [(nzVisible)]="isVisible" nzTitle="The first Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
-        <ng-template #modalTitle>
-            Add user
-        </ng-template>
+    <nz-modal [(nzVisible)]="isVisible"
+    [nzTitle]="modalTitle"
+    [nzContent]="modalContent"
+    [nzFooter]="modalFooter"
+    (nzOnCancel)="handleCancel()">
 
-        <ng-template #modalContent>
-            <form nz-form>
-                <nz-form-item>
-                    <nz-form-label [nzSpan]="6" nzFor="email">E-mail</nz-form-label>
-                    <nz-form-control [nzSpan]="14">
-                        <input nz-input name="email" type="email" id="email">
-                    </nz-form-control>
-                </nz-form-item>
-            </form>
-        </ng-template>
+    <ng-template #modalTitle>
+        Add user
+      </ng-template>
+    
+        <form nz-form>
+            <nz-form-item>
+              
+                <nz-form-label [nzSpan]="3" nzFor="id">ID</nz-form-label>
+                <nz-form-control [nzSpan]="14">
+                  <input nz-input name="id" type="text" id="id">
+                </nz-form-control><br><br>
 
-        <ng-template #modalFooter>
-            <span>Modal Footer: </span>
-            <button nz-button nzType="default" (click)="handleCancel()">Cancel</button>
-            <button nz-button nzType="primary" (click)="handleOk()">Add</button>
-        </ng-template>
+              <nz-form-label [nzSpan]="3" nzFor="name">Name</nz-form-label>
+              <nz-form-control [nzSpan]="14">
+                <input nz-input name="name" type="text" id="name">
+              </nz-form-control><br><br>
+
+              <nz-form-label [nzSpan]="3" nzFor="lastname">Lastname</nz-form-label>
+              <nz-form-control [nzSpan]="14">
+                <input nz-input name="lastname" type="text" id="lastname">
+              </nz-form-control><br><br>
+
+              <nz-form-label [nzSpan]="3" nzFor="role">Role</nz-form-label>
+              <nz-form-control [nzSpan]="14">
+                <nz-select ngModel="Select a role">
+                    <nz-option nzValue="admin" nzLabel="Admin"></nz-option>
+                    <nz-option nzValue="member" nzLabel="Member"></nz-option>
+                    <nz-option nzValue="doctor" nzLabel="Doctor"></nz-option>
+                    <nz-option nzValue="nurse" nzLabel="Nurse"></nz-option>
+                  </nz-select>
+              </nz-form-control>
+
+            </nz-form-item >
+          </form>
+
+          <ng-template #modalFooter>
+            <button nz-button nzType="primary" (click)="handleOk()" [nzLoading]="isConfirmLoading">ตกลง</button>
+            <button nz-button nzType="default" (click)="handleCancel()">ยกเลิก</button>
+          </ng-template>
+    
     </nz-modal>
 
     <br><br>
