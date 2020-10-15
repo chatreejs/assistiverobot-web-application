@@ -20,8 +20,7 @@ registerLocaleData(th);
   declarations: [
     AppComponent,
     Result403ForbiddenComponent,
-    Result404NotfoundComponent,
-    LoginComponent
+    Result404NotfoundComponent
   ],
   imports: [
     BrowserModule,
