@@ -1,20 +1,22 @@
-import { Injectable } from '@angular/core';
-import { environment } from 'projects/website/src/environments/environment';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { ResultResponse } from '../models/ResultResponse';
 import { Location } from '../models/Location';
 import { take, catchError } from 'rxjs/operators';
+import { WEB_SERVICE_CONFIG } from '../provider-name-token';
+import { WebServiceConfig } from '../web-service-config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocationsService {
 
-  private endPoint: string = environment.baseUrl + '/api/v1/locations'
+  private endPoint: string = this.webServiceConfig.webServiceUrl + '/api/v1/locations'
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    @Inject(WEB_SERVICE_CONFIG) private webServiceConfig: WebServiceConfig
   ) { }
 
   handleError(error: HttpErrorResponse) {
