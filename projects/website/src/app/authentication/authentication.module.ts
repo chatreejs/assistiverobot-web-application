@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './login/login.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Requestor, FetchRequestor } from '@openid/appauth';
 
+import { LoginComponent } from './login/login.component';
+import { CallbackComponent } from './callback/callback.component';
+
 import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AuthenticationService } from './authentication.service';
+import { AuthenticationGuard } from './authentication.guard';
 import { AuthenticationInceptor } from './authentication.inceptor';
+import { AuthenticationService } from './authentication.service';
 
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
@@ -18,12 +21,13 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCardModule } from 'ng-zorro-antd/card';
-import { AuthenticationGuard } from './authentication.guard';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    CallbackComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +42,8 @@ import { AuthenticationGuard } from './authentication.guard';
     NzIconModule,
     NzInputModule,
     NzButtonModule,
-    NzCardModule
+    NzCardModule,
+    NzSpinModule
   ],
   providers: [
     AuthenticationService,
