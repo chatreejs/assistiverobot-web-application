@@ -1,21 +1,23 @@
-import { Injectable } from '@angular/core';
-import { environment } from 'projects/website/src/environments/environment';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { ResultResponse } from '../models/ResultResponse';
 import { Job } from '../models/Job';
 import { JobRequest } from '../models/requests/JobRequest';
 import { take, catchError } from 'rxjs/operators';
+import { WEB_SERVICE_CONFIG } from '../provider-name-token';
+import { WebServiceConfig } from '../web-service-config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class JobsService {
 
-  private endPoint: string = environment.baseUrl + '/api/v1/jobs'
+  private endPoint: string = this.webServiceConfig.webServiceUrl + '/api/v1/jobs'
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    @Inject(WEB_SERVICE_CONFIG) private webServiceConfig: WebServiceConfig
   ) { }
 
   handleError(error: HttpErrorResponse) {

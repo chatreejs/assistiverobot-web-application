@@ -1,1 +1,33 @@
-<p>job works!</p>
+<nz-layout>
+    <br>
+    <div style="margin-left: 5%;">
+        <label nz-radio-button nzValue="all">All</label>
+        <label nz-radio-button nzValue="pending">Pending</label>
+        <label nz-radio-button nzValue="running">Running</label>
+        <label nz-radio-button nzValue="success">Success</label>
+        <label nz-radio-button nzValue="failed">Failed</label>
+    </div>
+    <br>
+    <div style="margin-left: 5%;margin-right: 5%;">
+        <nz-table #columnTable [nzData]="listOfData" [nzScroll]="{ x: '1100px' }">
+            <thead>
+              <tr>
+                <th nzLeft>ID</th>
+                <th nzLeft>Status</th>
+                <th>Creat Date</th>
+                <th nzRight >Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of columnTable.data">
+                <td>{{ data.ID }}</td>
+                <td>{{ data.Status }}</td>
+                <td>{{ data.Date }}</td>
+                <td nzRight>
+                  <h3><a nz-icon nzType="edit" nzTheme="outline" nzTooltipTitle="Edit" nzTooltipPlacement="topCenter" nz-tooltip></a><a nz-icon nzType="delete" style="margin-left: 10%;" nzTooltipTitle="Delete" nzTooltipPlacement="topCenter" nz-tooltip></a></h3>
+                </td>
+              </tr>
+            </tbody>
+          </nz-table>
+    </div>
+</nz-layout>
