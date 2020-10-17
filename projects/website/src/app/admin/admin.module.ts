@@ -21,8 +21,10 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
-
-
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 @NgModule({
   declarations: [
     AdminComponent,
@@ -50,6 +52,10 @@ import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
     NzInputNumberModule,
     NzSelectModule,
 
+    NzButtonModule,
+    NzCheckboxModule,
+    NzRadioModule,
+    NzToolTipModule,
   ]
 })
 export class AdminModule { }
