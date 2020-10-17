@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
 @Component({
+  // tslint:disable-next-line: component-selector
   selector: 'toktak-breadcrumb',
   templateUrl: './breadcrumb.component.html',
   styleUrls: ['./breadcrumb.component.scss']
