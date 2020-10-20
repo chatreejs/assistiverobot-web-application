@@ -2,36 +2,28 @@
   <nz-header>
     <div class="logo"></div>
     <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
-      <li nz-menu-item nzSelected>nav 1</li>
+      <!-- <li nz-menu-item nzSelected>nav 1</li>
       <li nz-menu-item>nav 2</li>
-      <li nz-menu-item>nav 3</li>
+      <li nz-menu-item>nav 3</li> -->
     </ul>
   </nz-header>
   <nz-layout>
     <nz-sider nzWidth="200px" nzTheme="light">
       <ul nz-menu nzMode="inline" class="sider-menu">
-        <li nz-submenu nzOpen nzIcon="user" nzTitle="subnav 1">
+        <li nz-submenu nzOpen nzIcon="audit" nzTitle="Job">
           <ul>
-            <li nz-menu-item nzSelected>option1</li>
-            <li nz-menu-item>option2</li>
-            <li nz-menu-item>option3</li>
-            <li nz-menu-item>option4</li>
+            <a routerLink="job"><li nz-menu-item>Job Management</li></a>
           </ul>
         </li>
-        <li nz-submenu nzTitle="subnav 2" nzIcon="laptop">
+        <li nz-submenu nzTitle="Location" nzIcon="flag">
           <ul>
-            <li nz-menu-item>option5</li>
-            <li nz-menu-item>option6</li>
-            <li nz-menu-item>option7</li>
-            <li nz-menu-item>option8</li>
+            <a routerLink="location"><li nz-menu-item>Location Management</li></a>
+
           </ul>
         </li>
-        <li nz-submenu nzTitle="subnav 3" nzIcon="notification">
+        <li nz-submenu nzTitle="User" nzIcon="user">
           <ul>
-            <li nz-menu-item>option9</li>
-            <li nz-menu-item>option10</li>
-            <li nz-menu-item>option11</li>
-            <li nz-menu-item>option12</li>
+            <a routerLink="um"><li nz-menu-item>User Management</li></a>
           </ul>
         </li>
       </ul>
