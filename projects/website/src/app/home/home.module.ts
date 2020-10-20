@@ -6,6 +6,7 @@ import { HomeComponent } from './home.component';
 import { MapFormComponent } from './map-form/map-form.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { CompleteComponent } from './complete/complete.component';
+import { UmComponent } from './um/um.component'
 
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzGridModule } from 'ng-zorro-antd/grid';
@@ -19,22 +20,31 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzResultModule } from 'ng-zorro-antd/result';
-
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { CoreModule } from '../core/core.module';
 
 
 @NgModule({
   declarations: [
+    UmComponent,
     HomeComponent,
     MapFormComponent,
     ConfirmComponent,
-    CompleteComponent
+    CompleteComponent,
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
     ReactiveFormsModule,
-
     NzIconModule,
     NzLayoutModule,
     NzGridModule,
@@ -46,8 +56,17 @@ import { CoreModule } from '../core/core.module';
     NzMessageModule,
     NzInputModule,
     NzResultModule,
-
     CoreModule,
+    NzFormModule,
+    NzTableModule,
+    NzMenuModule,
+    NzPaginationModule,
+    NzModalModule,
+    DragDropModule,
+    NzInputNumberModule,
+    NzCheckboxModule,
+    NzRadioModule,
+    NzToolTipModule,
   ]
 })
 export class HomeModule { }
