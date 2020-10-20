@@ -4,10 +4,10 @@
   </div>
 </div>
 <div nz-row nzType="flex" nzJustify="center">
-  <div nz-col nzSpan="14">
+  <div nz-col nzSpan="14" *ngIf="startLocation && destLocation">
     <nz-timeline>
-      <nz-timeline-item>{{ this.startLocation }}</nz-timeline-item>
-      <nz-timeline-item>{{ this.destLocation }}</nz-timeline-item>
+      <nz-timeline-item>{{ startLocation.name }}</nz-timeline-item>
+      <nz-timeline-item>{{ destLocation.name }}</nz-timeline-item>
     </nz-timeline>
   </div>
 </div>
@@ -16,15 +16,16 @@
   nzType="flex"
   nzJustify="center"
   [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32, xl: 32, xxl: 32 }"
+  *ngIf="startLocation && destLocation"
 >
   <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="8" nzXl="8">
     <nz-input-group nzAddOnBefore="From">
-      <input type="text" nz-input value="{{ this.startLocation }}" disabled />
+      <input type="text" nz-input value="{{ startLocation.name }}" disabled />
     </nz-input-group>
   </div>
   <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="8" nzXl="8">
     <nz-input-group nzAddOnBefore="To">
-      <input type="text" nz-input value="{{ this.destLocation }}" disabled />
+      <input type="text" nz-input value="{{ destLocation.name }}" disabled />
     </nz-input-group>
   </div>
 </div>

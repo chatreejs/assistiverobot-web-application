@@ -29,7 +29,7 @@ export class LocationsService {
   }
 
   public getLocationById(id: number): Observable<ResultResponse<Location>> {
-    return this.http.get<ResultResponse<Location>>(this.endPoint)
+    return this.http.get<ResultResponse<Location>>(`${this.endPoint}/${id}`)
       .pipe(take(1), catchError(this.handleError))
   }
 
