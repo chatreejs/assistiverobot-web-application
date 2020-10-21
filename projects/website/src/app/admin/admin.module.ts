@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
-import { LocationComponent } from './location/location.component';
 import { UmComponent } from './um/um.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
@@ -32,7 +31,6 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
 @NgModule({
   declarations: [
     AdminComponent,
-    LocationComponent,
     UmComponent,
     DashboardComponent,
   ],

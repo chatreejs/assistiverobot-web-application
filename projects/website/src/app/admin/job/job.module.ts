@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { StatusColorPipe } from '../../core/pipes/status-color.pipe';
-import { CoreModule } from '../../core/core.module';
 
 import { JobComponent } from './job.component';
 import { JobFormComponent } from './job-form/job-form.component';
@@ -29,7 +28,6 @@ import { JobTableComponent } from './job-table/job-table.component';
     CommonModule,
     JobRoutingModule,
     FormsModule,
-    CoreModule,
 
     NzPageHeaderModule,
     NzRadioModule,

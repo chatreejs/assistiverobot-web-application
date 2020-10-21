@@ -1,0 +1,77 @@
+<nz-page-header>
+  <nz-page-header-content>
+    <div nz-row>
+      <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="24" nzXl="24">
+        <h1 nz-typography>Location Management</h1>
+        <button
+          nzType="primary"
+          nzTooltipTitle="Create"
+          nzTooltipPlacement="topCenter"
+          [routerLink]="['create']"
+          nz-button
+          nz-tooltip
+        >
+          <i nz-icon nzType="plus" nzTheme="outline"></i>
+          <span>New Location</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="job-table">
+      <nz-table
+        #basicTable
+        nzSize="middle"
+        [nzData]="locationList"
+        nzShowPagination
+        nzShowSizeChanger
+      >
+        <thead>
+          <tr>
+            <th nzLeft>ID</th>
+            <th nzLeft>Name</th>
+            <th>Position (x, y, z)</th>
+            <th>Orientation (x, y, z, w)</th>
+            <th nzRight>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of basicTable.data">
+            <td>{{ data.location_id }}</td>
+            <td>
+              {{ data.name }}
+            </td>
+            <td>
+              {{ data.position.x }} | {{ data.position.y }} |
+              {{ data.position.z }}
+            </td>
+            <td>
+              {{ data.orientation.x }} | {{ data.orientation.x }} |
+              {{ data.orientation.x }} | {{ data.orientation.w }}
+            </td>
+            <td nzRight>
+              <h3>
+                <a
+                  nzType="edit"
+                  nzTheme="outline"
+                  nzTooltipTitle="Edit"
+                  nzTooltipPlacement="topCenter"
+                  [routerLink]="['edit', data.location_id]"
+                  nz-icon
+                  nz-tooltip
+                ></a
+                ><a
+                  nzType="delete"
+                  style="margin-left: 10%"
+                  nzTooltipTitle="Delete"
+                  nzTooltipPlacement="topCenter"
+                  nz-icon
+                  nz-tooltip
+                ></a>
+              </h3>
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
+  </nz-page-header-content>
+</nz-page-header>

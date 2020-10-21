@@ -3,8 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LocationComponent } from './location/location.component';
-import { UmComponent } from './um/um.component';
 
 
 const routes: Routes = [
@@ -22,7 +20,7 @@ const routes: Routes = [
       },
       {
         path: 'location',
-        component: LocationComponent
+        loadChildren: () => import('./location/location.module').then(m => m.LocationModule)
       },
       {
         path: 'um',
