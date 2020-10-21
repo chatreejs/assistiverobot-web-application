@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UmComponent } from './um.component';
+import { JobTableComponent } from './job-table.component';
 
-describe('UmComponent', () => {
-  let component: UmComponent;
-  let fixture: ComponentFixture<UmComponent>;
+describe('JobTableComponent', () => {
+  let component: JobTableComponent;
+  let fixture: ComponentFixture<JobTableComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UmComponent ]
+      declarations: [ JobTableComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UmComponent);
+    fixture = TestBed.createComponent(JobTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

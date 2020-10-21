@@ -1,41 +1,40 @@
 <nz-layout>
   <nz-header>
+    <!-- Logo -->
     <div class="logo"></div>
-    <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
-      <!-- <li nz-menu-item nzSelected>nav 1</li>
-      <li nz-menu-item>nav 2</li>
-      <li nz-menu-item>nav 3</li> -->
-    </ul>
+    <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu"></ul>
   </nz-header>
-  <nz-layout>
-    <nz-sider nzWidth="200px" nzTheme="light">
-      <ul nz-menu nzMode="inline" class="sider-menu">
-        <li nz-submenu nzOpen nzIcon="audit" nzTitle="Job">
-          <ul>
-            <a routerLink="job"><li nz-menu-item>Job Management</li></a>
-          </ul>
-        </li>
-        <li nz-submenu nzTitle="Location" nzIcon="flag">
-          <ul>
-            <a routerLink="location"><li nz-menu-item>Location Management</li></a>
 
-          </ul>
+  <nz-layout>
+    <!-- Menu -->
+    <nz-sider nzTheme="light">
+      <ul nz-menu nzMode="inline" class="sider-menu">
+        <li nz-menu-item nzMatchRouter>
+          <a [routerLink]="'job'">
+            <i nz-icon="audit"></i>
+            <span>Job</span>
+          </a>
         </li>
-        <li nz-submenu nzTitle="User" nzIcon="user">
-          <ul>
-            <a routerLink="um"><li nz-menu-item>User Management</li></a>
-          </ul>
+        <li nz-menu-item nzMatchRouter>
+          <a [routerLink]="'location'">
+            <i nz-icon="flag"></i>
+            <span>Location</span>
+          </a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a [routerLink]="'um'">
+            <i nz-icon="user"></i>
+            <span>User Management</span>
+          </a>
         </li>
       </ul>
     </nz-sider>
+
     <nz-layout class="inner-layout">
-      <nz-breadcrumb>
-        <nz-breadcrumb-item>Home</nz-breadcrumb-item>
-        <nz-breadcrumb-item>List</nz-breadcrumb-item>
-        <nz-breadcrumb-item>App</nz-breadcrumb-item>
-      </nz-breadcrumb>
       <nz-content>
-        <router-outlet></router-outlet>
+        <div class="inner-content">
+          <router-outlet></router-outlet>
+        </div>
       </nz-content>
     </nz-layout>
   </nz-layout>

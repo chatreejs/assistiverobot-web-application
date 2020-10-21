@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
-import { LocationComponent } from './location/location.component';
-import { JobComponent } from './job/job.component';
 import { UmComponent } from './um/um.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+
+import { NzMessageService } from 'ng-zorro-antd/message';
+
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -19,23 +21,25 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzFormModule } from 'ng-zorro-antd/form';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
-import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+
+
 @NgModule({
   declarations: [
     AdminComponent,
-    LocationComponent,
-    JobComponent,
     UmComponent,
     DashboardComponent,
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
+    FormsModule,
 
     NzLayoutModule,
     NzMenuModule,
@@ -55,6 +59,11 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
     NzCheckboxModule,
     NzRadioModule,
     NzToolTipModule,
+    NzPageHeaderModule,
+    NzTagModule,
+  ],
+  providers: [
+    NzMessageService
   ]
 })
 export class AdminModule { }

@@ -1,3 +1,11 @@
+:host {
+  height: 100vh;
+  display: flex;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .logo {
   width: 120px;
   height: 31px;
@@ -19,6 +27,13 @@
   padding: 0 24px 24px;
 }
 
+.inner-content {
+  background: #fff;
+  padding: 0 24px 24px 24px;
+  min-height: 280px;
+  height: 100%;
+}
+
 nz-breadcrumb {
   margin: 16px 0;
 }
@@ -26,5 +41,5 @@ nz-breadcrumb {
 nz-content {
   background: #fff;
   padding: 24px;
-  min-height: 280px;
+  min-height: 100%;
 }
