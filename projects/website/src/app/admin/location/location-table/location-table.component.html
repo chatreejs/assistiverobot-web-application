@@ -55,7 +55,8 @@
                   nzTheme="outline"
                   nzTooltipTitle="Edit"
                   nzTooltipPlacement="topCenter"
-                  [routerLink]="['edit', data.location_id]"
+                  [routerLink]="['edit']"
+                  [queryParams]="{ id: data.location_id }"
                   nz-icon
                   nz-tooltip
                 ></a

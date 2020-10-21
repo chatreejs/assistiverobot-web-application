@@ -7,6 +7,8 @@ import { AdminComponent } from './admin.component';
 import { UmComponent } from './um/um.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+import { NzMessageService } from 'ng-zorro-antd/message';
+
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -59,6 +61,9 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
     NzToolTipModule,
     NzPageHeaderModule,
     NzTagModule,
+  ],
+  providers: [
+    NzMessageService
   ]
 })
 export class AdminModule { }

@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       { path: '', component: LocationTableComponent },
       { path: 'create', component: LocationFormComponent },
-      { path: 'edit/:id', component: LocationFormComponent }
+      { path: 'edit', component: LocationFormComponent }
     ]
   }
 ]

@@ -1,1 +1,127 @@
-<p>location-form works!</p>
+<nz-page-header>
+  <nz-page-header-content>
+    <div nz-row>
+      <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="24" nzXl="24">
+        <h1 nz-typography>
+          {{ isEditable ? "Edit Location" : "Add Location" }}
+        </h1>
+      </div>
+    </div>
+
+    <form nz-form [nzLayout]="'vertical'" [formGroup]="locationForm">
+      <div nz-row [nzGutter]="8">
+        <div nz-col nzXs="24" nzSm="24" nzLg="6">
+          <nz-form-item>
+            <nz-form-label [nzSpan]="null" nzFor="name" nzRequired
+              >name</nz-form-label
+            >
+            <nz-form-control [nzSpan]="null" nzErrorTip="required">
+              <input formControlName="name" id="name" nz-input />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+      <div nz-row [nzGutter]="8">
+        <div nz-col nzXs="24" nzSm="24" nzLg="6">
+          <nz-form-item>
+            <nz-form-label [nzSpan]="null" nzFor="position-x" nzRequired
+              >Position X</nz-form-label
+            >
+            <nz-form-control [nzSpan]="null" nzErrorTip="required">
+              <input formControlName="positionX" id="position-x" nz-input />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col nzXs="24" nzSm="24" nzLg="6">
+          <nz-form-item>
+            <nz-form-label [nzSpan]="null" nzFor="position-y" nzRequired
+              >Position Y</nz-form-label
+            >
+            <nz-form-control [nzSpan]="null" nzErrorTip="required">
+              <input formControlName="positionY" id="position-y" nz-input />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col nzXs="24" nzSm="24" nzLg="6">
+          <nz-form-item>
+            <nz-form-label [nzSpan]="null" nzFor="position-z" nzRequired
+              >Position Z</nz-form-label
+            >
+            <nz-form-control [nzSpan]="null" nzErrorTip="required">
+              <input formControlName="positionZ" id="position-z" nz-input />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+      <div nz-row [nzGutter]="8">
+        <div nz-col nzXs="24" nzSm="24" nzLg="6">
+          <nz-form-item>
+            <nz-form-label [nzSpan]="null" nzFor="orientation-x" nzRequired
+              >Orientation X</nz-form-label
+            >
+            <nz-form-control [nzSpan]="null" nzErrorTip="required">
+              <input
+                formControlName="orientationX"
+                id="orientation-x"
+                nz-input
+              />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col nzXs="24" nzSm="24" nzLg="6">
+          <nz-form-item>
+            <nz-form-label [nzSpan]="null" nzFor="orientation-y" nzRequired
+              >Orientation Y</nz-form-label
+            >
+            <nz-form-control [nzSpan]="null" nzErrorTip="required">
+              <input
+                formControlName="orientationY"
+                id="orientation-y"
+                nz-input
+              />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col nzXs="24" nzSm="24" nzLg="6">
+          <nz-form-item>
+            <nz-form-label [nzSpan]="null" nzFor="orientation-z" nzRequired
+              >Orientation Z</nz-form-label
+            >
+            <nz-form-control [nzSpan]="null" nzErrorTip="required">
+              <input
+                formControlName="orientationZ"
+                id="orientation-z"
+                nz-input
+              />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col nzXs="24" nzSm="24" nzLg="6">
+          <nz-form-item>
+            <nz-form-label [nzSpan]="null" nzFor="orientation-w" nzRequired
+              >Orientation W</nz-form-label
+            >
+            <nz-form-control [nzSpan]="null" nzErrorTip="required">
+              <input
+                formControlName="orientationW"
+                id="orientation-w"
+                nz-input
+              />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+      <!--  Button  -->
+      <nz-form-item nz-row>
+        <nz-form-control [nzSpan]="14">
+          <button (click)="submitForm()" nz-button nzType="primary">
+            Save
+          </button>
+          <button (click)="resetForm()" nz-button nzType="default">
+            Clear
+          </button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </nz-page-header-content>
+</nz-page-header>

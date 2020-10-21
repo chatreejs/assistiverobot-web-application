@@ -11,7 +11,7 @@ const routes: Routes = [
     component: JobComponent,
     children: [
       { path: '', component: JobTableComponent },
-      { path: 'edit/:id', component: JobFormComponent }
+      { path: 'edit', component: JobFormComponent }
     ]
   }
 ]
