@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { JobComponent } from './job/job.component';
 import { LocationComponent } from './location/location.component';
 import { UmComponent } from './um/um.component';
 
@@ -17,16 +17,17 @@ const routes: Routes = [
         component: DashboardComponent
       },
       {
+        path: 'job',
+        loadChildren: () => import('./job/job.module').then(m => m.JobModule)
+      },
+      {
         path: 'location',
         component: LocationComponent
       },
       {
-        path: 'job',
-        component: JobComponent
-      },
-      {
         path: 'um',
-        component: UmComponent
+        redirectTo: '/forbidden'
+        // component: UmComponent
       }
     ]
   }

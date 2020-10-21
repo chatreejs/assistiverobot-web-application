@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { StatusColorPipe } from '../core/pipes/status-color.pipe';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { LocationComponent } from './location/location.component';
-import { JobComponent } from './job/job.component';
 import { UmComponent } from './um/um.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
@@ -33,10 +31,8 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
   declarations: [
     AdminComponent,
     LocationComponent,
-    JobComponent,
     UmComponent,
     DashboardComponent,
-    StatusColorPipe,
   ],
   imports: [
     CommonModule,
