@@ -2,10 +2,33 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
+import { AuthenticationConfig } from '../app/core/authentication-config';
+import { GeneralEnvironmentConfig } from '../app/core/environment-config';
+import { WebServiceConfig } from '../app/core/web-service-config';
+
+export const environment:
+  GeneralEnvironmentConfig &
+  WebServiceConfig &
+  AuthenticationConfig = {
+  // GeneralEnvironmentConfig
   production: false,
-  baseUrl: 'http://localhost:5000'
-};
+  cookieAcceptExpireDateNumber: 7,
+  useHomePage: false,
+  requireAuthenticationHomePage: true,
+  fullSecureAuthentication: false,
+
+  // WebServiceConfig
+  // webServiceUrl: 'https://localhost:5001',
+  webServiceUrl: 'http://10.1.136.72/service-dev',
+
+  // AuthenticationConfig
+  issuerUri: 'https://localhost:5001/api/v1/authen',
+  clientId: 'toktak.io',
+  clientSecret: null,
+  redirectUri: 'http://localhost:4200/callback',
+  scope: 'toktak',
+  redirectUrlAfterLogedIn: 'http://localhost:4200',
+}
 
 /*
  * For easier debugging in development mode, you can import the following file

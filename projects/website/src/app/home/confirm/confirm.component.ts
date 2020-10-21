@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd';
 import { JobsService } from '../../core/services/jobs.service';
 import { JobRequest } from '../../core/models/requests/JobRequest';
+import { Location } from '../../core/models/Location';
+import { LocationsService } from '../../core/services/locations.service';
 
 @Component({
   selector: 'app-confirm',
@@ -11,13 +13,14 @@ import { JobRequest } from '../../core/models/requests/JobRequest';
 })
 export class ConfirmComponent implements OnInit {
 
-  public startLocation: number
-  public destLocation: number
+  public startLocation: Location
+  public destLocation: Location
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private jobService: JobsService,
+    private locationService: LocationsService,
     private message: NzMessageService
   ) {
     const navigation = this.router.getCurrentNavigation()
@@ -27,8 +30,12 @@ export class ConfirmComponent implements OnInit {
     }
 
     try {
-      this.startLocation = state.start
-      this.destLocation = state.dest
+      this.locationService.getLocationById(state.start).subscribe((response) => {
+        this.startLocation = response.result
+      })
+      this.locationService.getLocationById(state.dest).subscribe((response) => {
+        this.destLocation = response.result
+      })
     } catch (e) {
       this.router.navigate([''])
     }
@@ -38,8 +45,8 @@ export class ConfirmComponent implements OnInit {
 
   submit() {
     const jobRequest: JobRequest = {
-      start: this.startLocation,
-      destination: this.destLocation
+      start: this.startLocation.location_id,
+      destination: this.destLocation.location_id
     }
     this.jobService.createJob(jobRequest).subscribe((response) => {
       if (response.message == "success") {

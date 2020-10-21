@@ -12,7 +12,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class MapFormComponent implements OnInit {
 
-  public locationList: Location[] = []
+  // public locationList: Location[] = [{name:'T1',location_id:1},{name:'T2',location_id:1}]
+  public locationList: Location[]
   public locationForm: FormGroup
 
   public get startLocation(): number {

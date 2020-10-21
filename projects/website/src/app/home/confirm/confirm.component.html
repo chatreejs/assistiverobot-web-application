@@ -1,69 +1,48 @@
-<nz-breadcrumb nzSeparator=">">
-  <nz-breadcrumb-item> เลือกสถานที่ </nz-breadcrumb-item>
-  <nz-breadcrumb-item> ยืนยันสถานที่ </nz-breadcrumb-item>
-</nz-breadcrumb>
-<div class="inner-content">
-  <div nz-row nzType="flex" nzJustify="center">
-    <div nz-col nzSpan="16" class="tx-center">
-      <h2>กรุณายืนยัน</h2>
-    </div>
+<div nz-row nzType="flex" nzJustify="center">
+  <div nz-col nzSpan="16" class="tx-center">
+    <h2>กรุณายืนยัน</h2>
   </div>
-  <div nz-row nzType="flex" nzJustify="center">
-    <div nz-col nzSpan="14">
-      <nz-timeline>
-        <nz-timeline-item>{{ this.startLocation }}</nz-timeline-item>
-        <nz-timeline-item>{{ this.destLocation }}</nz-timeline-item>
-      </nz-timeline>
-    </div>
+</div>
+<div nz-row nzType="flex" nzJustify="center">
+  <div nz-col nzSpan="14" *ngIf="startLocation && destLocation">
+    <nz-timeline>
+      <nz-timeline-item>{{ startLocation.name }}</nz-timeline-item>
+      <nz-timeline-item>{{ destLocation.name }}</nz-timeline-item>
+    </nz-timeline>
   </div>
-  <div
-    nz-row
-    nzType="flex"
-    nzJustify="center"
-    [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32, xl: 32, xxl: 32 }"
-  >
-    <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="8" nzXl="8">
-      <nz-input-group nzAddOnBefore="From">
-        <input type="text" nz-input value="{{ this.startLocation }}" disabled />
-      </nz-input-group>
-    </div>
-    <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="8" nzXl="8">
-      <nz-input-group nzAddOnBefore="To">
-        <input type="text" nz-input value="{{ this.destLocation }}" disabled />
-      </nz-input-group>
-    </div>
+</div>
+<div
+  nz-row
+  nzType="flex"
+  nzJustify="center"
+  [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32, xl: 32, xxl: 32 }"
+  *ngIf="startLocation && destLocation"
+>
+  <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="8" nzXl="8">
+    <nz-input-group nzAddOnBefore="From">
+      <input type="text" nz-input value="{{ startLocation.name }}" disabled />
+    </nz-input-group>
   </div>
-  <div
-    nz-row
-    nzType="flex"
-    nzJustify="center"
-    [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32, xl: 32, xxl: 32 }"
-  >
-    <div
-      nz-col
-      nzXs="24"
-      nzSm="24"
-      nzMd="24"
-      nzLg="8"
-      nzXl="8"
-      class="tx-center"
-    >
-      <button nz-button nzType="primary" class="bn-margin" (click)="submit()">
-        ยืนยัน
-      </button>
-    </div>
-    <div
-      nz-col
-      nzXs="24"
-      nzSm="24"
-      nzMd="24"
-      nzLg="8"
-      nzXl="8"
-      class="tx-center"
-    >
-      <button nz-button nzType="danger" class="bn-margin" [routerLink]="'/'">
-        ยกเลิก
-      </button>
-    </div>
+  <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="8" nzXl="8">
+    <nz-input-group nzAddOnBefore="To">
+      <input type="text" nz-input value="{{ destLocation.name }}" disabled />
+    </nz-input-group>
+  </div>
+</div>
+<div
+  nz-row
+  nzType="flex"
+  nzJustify="center"
+  [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32, xl: 32, xxl: 32 }"
+>
+  <div nz-col nzXs="12" nzSm="12" nzMd="12" nzLg="8" nzXl="8" class="tx-center">
+    <button nz-button nzType="primary" class="bn-margin" (click)="submit()">
+      ยืนยัน
+    </button>
+  </div>
+  <div nz-col nzXs="12" nzSm="12" nzMd="12" nzLg="8" nzXl="8" class="tx-center">
+    <button nz-button nzType="danger" class="bn-margin" [routerLink]="'/'">
+      ยกเลิก
+    </button>
   </div>
 </div>
