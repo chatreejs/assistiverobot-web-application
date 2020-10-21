@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { CoreModule } from '../core/core.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { MapFormComponent } from './map-form/map-form.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { CompleteComponent } from './complete/complete.component';
-import { UmComponent } from './um/um.component'
 
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzGridModule } from 'ng-zorro-antd/grid';
@@ -30,12 +30,10 @@ import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
-import { CoreModule } from '../core/core.module';
 
 
 @NgModule({
   declarations: [
-    UmComponent,
     HomeComponent,
     MapFormComponent,
     ConfirmComponent,
@@ -45,6 +43,8 @@ import { CoreModule } from '../core/core.module';
     CommonModule,
     HomeRoutingModule,
     ReactiveFormsModule,
+    CoreModule,
+
     NzIconModule,
     NzLayoutModule,
     NzGridModule,
@@ -56,7 +56,6 @@ import { CoreModule } from '../core/core.module';
     NzMessageModule,
     NzInputModule,
     NzResultModule,
-    CoreModule,
     NzFormModule,
     NzTableModule,
     NzMenuModule,
