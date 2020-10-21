@@ -12,15 +12,6 @@
             >{{ status | titlecase }}
           </label>
         </nz-radio-group>
-        <button
-          nzType="primary"
-          nzTooltipTitle="Create"
-          nzTooltipPlacement="topCenter"
-          nz-button
-          nz-tooltip
-        >
-          <i nz-icon nzType="plus" nzTheme="outline"></i>
-        </button>
       </div>
     </div>
 
@@ -52,7 +43,7 @@
             <td>{{ data.created_date }}</td>
             <td>{{ data.updated_date }}</td>
             <td nzRight>
-              <h3>
+              <h3 *ngIf="data.status == 'pending'">
                 <a
                   nzType="edit"
                   nzTheme="outline"
@@ -61,11 +52,11 @@
                   [routerLink]="['edit', data.job_id]"
                   nz-icon
                   nz-tooltip
-                ></a
-                ><a
-                  nzType="delete"
+                ></a>
+                <a
+                  nzType="close"
                   style="margin-left: 10%"
-                  nzTooltipTitle="Delete"
+                  nzTooltipTitle="Cancel"
                   nzTooltipPlacement="topCenter"
                   nz-icon
                   nz-tooltip
