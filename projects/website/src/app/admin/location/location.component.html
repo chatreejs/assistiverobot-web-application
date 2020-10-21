@@ -1,31 +1,69 @@
-<div style="margin-left: 5%;margin-right: 5%;">
-    <div>
-        <!--Mapping-->
+<nz-page-header>
+  <nz-page-header-content>
+    <div nz-row>
+      <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="24" nzXl="24">
+        <h1 nz-typography>Job Management</h1>
+        <!-- <nz-radio-group [(ngModel)]="status" (ngModelChange)="setFilter()">
+          <label nz-radio-button [nzValue]="0">All</label>
+          <label
+            nz-radio-button
+            *ngFor="let status of statusList"
+            [nzValue]="status"
+            >{{ status | titlecase }}
+          </label>
+        </nz-radio-group> -->
+      </div>
     </div>
-    <form nz-form>
-        <nz-form-item>
 
-          <nz-form-label [nzSpan]="1" nzFor="name">Name</nz-form-label>
-          <nz-form-control [nzSpan]="12">
-            <input type="text" nz-input />
-          </nz-form-control>
-          <div >
-            <nz-form-label [nzSpan]="1" nzFor="name">X</nz-form-label>
-            <nz-form-control [nzSpan]="4">
-                <input type="text" nz-input/>
-            </nz-form-control>
-            <nz-form-label [nzSpan]="1" nzFor="name">Y</nz-form-label>
-            <nz-form-control [nzSpan]="4">
-                <input type="text" nz-input/>
-            </nz-form-control>
-          </div>
-          <nz-form-label [nzSpan]="24"></nz-form-label>
-
-          <nz-form-label [nzSpan]="1" nzFor="name">Detail</nz-form-label>
-          <nz-form-control [nzSpan]="22">
-            <textarea rows="5" nz-input></textarea>
-          </nz-form-control>
-        </nz-form-item >
-      </form>
-      <label nz-radio-button nzValue="all" style="margin-left: 50%">All</label>
-</div>
+    <div class="job-table">
+      <nz-table
+        #basicTable
+        nzSize="middle"
+        [nzData]="locationList"
+        nzShowPagination
+        nzShowSizeChanger
+      >
+        <thead>
+          <tr>
+            <th nzLeft>ID</th>
+            <th nzLeft>Name</th>
+            <th>Position</th>
+            <th>Orientation</th>
+            <th nzRight>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of basicTable.data">
+            <td>{{ data.location_id }}</td>
+            <td>
+              <!-- <nz-tag [nzColor]="data.status | statusColor">{{ data.status }}</nz-tag> -->
+              {{data.name}}
+            </td>
+            <td>{{ data.position.x }},{{ data.position.y }},{{ data.position.z }}</td>
+            <td>{{ data.orientation.x }},{{ data.orientation.x }},{{ data.orientation.x }},{{ data.orientation.w }}</td>
+            <td nzRight>
+              <h3>
+                <a
+                  nz-icon
+                  nzType="edit"
+                  nzTheme="outline"
+                  nzTooltipTitle="Edit"
+                  nzTooltipPlacement="topCenter"
+                  nz-tooltip
+                ></a
+                ><a
+                  nz-icon
+                  nzType="delete"
+                  style="margin-left: 10%"
+                  nzTooltipTitle="Delete"
+                  nzTooltipPlacement="topCenter"
+                  nz-tooltip
+                ></a>
+              </h3>
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
+  </nz-page-header-content>
+</nz-page-header>
