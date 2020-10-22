@@ -14,7 +14,8 @@ export const environment:
   fullSecureAuthentication: false,
 
   // WebServiceConfig
-  webServiceUrl: 'http://10.1.136.72/service',
+  // webServiceUrl: 'http://10.1.136.72/service',
+  webServiceUrl: 'http://192.168.1.102/service',
 
   // AuthenticationConfig
   issuerUri: 'https://localhost:5001/api/v1/authen',
